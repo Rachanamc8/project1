@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>From-To Travel Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Travel Plan</h2>
+
+  <!-- FROM Textbox + Dropdown -->
+  <input list="fromOptions" id="from" placeholder="From">
+  <datalist id="fromOptions">
+    <option value="Bangalore">
+    <option value="Delhi">
+    <option value="Mumbai">
+    <option value="Chennai">
+  </datalist>
+
+  <br><br>
+
+  <!-- TO Textbox + Dropdown -->
+  <input list="toOptions" id="to" placeholder="To">
+  <datalist id="toOptions">
+    <option value="Thailand">
+    <option value="Singapore">
+    <option value="Dubai">
+    <option value="Maldives">
+  </datalist>
+
+  <br><br>
+
+  <button onclick="openImage()">Submit</button>
+
+  <script>
+    function openImage() {
+      let fromValue = document.getElementById("from").value.trim().toLowerCase();
+      let toValue = document.getElementById("to").value.trim().toLowerCase();
+
+      if (fromValue === "bangalore" && toValue === "thailand") {
+        // Opens the image in a new tab
+        window.open("images/Thailand_Itenary.jpeg", "_blank");
+      } else {
+        alert("No image for this route.");
+      }
+    }
+  </script>
+
+</body>
+</html>
